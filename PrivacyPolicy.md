@@ -42,7 +42,7 @@ We request the following device permissions, each used only for the stated purpo
 |---|---|---|
 | **Camera** | Camera viewfinder only | Scan circular group join codes. No images are captured, stored, or transmitted. |
 | **Location (When In Use)** | Approximate location | Center the map picker when you choose an event location. Not tracked in background, not shared with third parties. |
-| **Calendar (Full Access)** | Your calendar events | Display your personal events alongside group events in the Calendar tab. Personal Calandar event times only may leave your device with your express permission. Other calandar data like location, name, etc. is never sent to our servers. |
+| **Calendar (Full Access)** | Your calendar events | Display your personal events alongside group events in the Calendar tab. Personal Calendar event times only may leave your device with your express permission. Other calendar data like location, name, etc. is never sent to our servers. |
 | **Notifications** | Push notification delivery | Send you alerts about new events, RSVPs, join approvals, and reminders. |
 
 ### 2.4 Information from Third-Party Advertising
@@ -78,7 +78,7 @@ We do not sell your personal information to third parties.
 
 ### 4.1 Server Storage
 
-Your account data, group data, event data, and chat messages are stored on our servers hosted via [your hosting provider]. Event location data is stored in **encrypted form** using `pgp_sym_encrypt` (pgcrypto) and is decrypted only when delivered to authorized group members.
+Your account data, group data, event data, and chat messages are stored on our servers hosted via Render. Event location data is stored in **encrypted form** using `pgp_sym_encrypt` (pgcrypto) and is decrypted only when delivered to authorized group members.
 
 ### 4.2 On-Device Storage
 

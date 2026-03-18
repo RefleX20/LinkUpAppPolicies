@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkUp — Legal</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f9f9f9;
+      color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 48px 40px;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    }
+    h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; }
+    p { color: #666; margin-bottom: 32px; }
+    .links { display: flex; flex-direction: column; gap: 12px; }
+    a.btn {
+      display: block;
+      padding: 14px 20px;
+      border-radius: 10px;
+      background: #007aff;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    a.btn:hover { background: #005ecb; }
+    a.btn.secondary { background: #f0f0f0; color: #1a1a1a; }
+    a.btn.secondary:hover { background: #e0e0e0; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>LinkUp</h1>
+    <p>Legal documents for the LinkUp app</p>
+    <div class="links">
+      <a class="btn" href="privacy.html">Privacy Policy</a>
+      <a class="btn secondary" href="tos.html">Terms of Service</a>
+    </div>
+  </div>
+</body>
+</html>

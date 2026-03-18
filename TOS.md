@@ -219,7 +219,7 @@ You agree to indemnify, defend, and hold harmless LinkUp and its officers, direc
 ## 17. Governing Law and Dispute Resolution
 
 ### 17.1 Governing Law
-These Terms shall be governed by and construed in accordance with the laws of the United States and the State of [Your State], without regard to its conflict of law provisions.
+These Terms shall be governed by and construed in accordance with the laws of the United States and the Commonwealth of Pennsylvania, without regard to its conflict of law provisions.
 
 ### 17.2 Informal Resolution
 Before filing any formal legal claim, you agree to attempt to resolve the dispute informally by contacting us at support@linkupapp.com. We will attempt to resolve the dispute within 30 days.
