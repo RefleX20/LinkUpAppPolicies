@@ -1,6 +1,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
+  --orange: #FF9500;
+  --red: #E03A3A;
+  --gradient: linear-gradient(135deg, #FF9500 0%, #E03A3A 100%);
   --black: #0a0a0a;
   --white: #ffffff;
   --border: rgba(255,255,255,0.08);
@@ -71,8 +74,9 @@ body {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--orange);
+  background: rgba(255,149,0,0.1);
+  border: 1px solid rgba(255,149,0,0.25);
   padding: 4px 12px;
   border-radius: 50px;
   margin-bottom: 20px;
@@ -109,7 +113,7 @@ h2::before {
   display: block;
   width: 4px;
   height: 20px;
-  background: rgba(255,255,255,0.15);
+  background: var(--gradient);
   border-radius: 2px;
   flex-shrink: 0;
 }
@@ -148,8 +152,8 @@ code {
   color: rgba(255,255,255,0.8);
 }
 
-a { color: rgba(255,255,255,0.8); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,0.2); }
-a:hover { color: #fff; text-decoration-color: rgba(255,255,255,0.5); }
+a { color: var(--orange); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,149,0,0.3); }
+a:hover { color: #ffb340; text-decoration-color: rgba(255,149,0,0.6); }
 
 hr {
   border: none;
