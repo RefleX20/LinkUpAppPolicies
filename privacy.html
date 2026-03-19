@@ -10,194 +10,196 @@
 <body>
 
 <nav class="topnav">
-  <a href="index.html">
-    <span class="back-arrow">←</span>
+  <div class="topnav-left">
+    <a class="back" href="index.html">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+      Back
+    </a>
+    <div class="nav-divider"></div>
     <img class="nav-logo" src="logo.png" alt="LinkUp" />
-  </a>
+  </div>
+  <div class="topnav-right">Privacy Policy</div>
 </nav>
 
 <div class="page-wrap">
-  <div class="doc-card">
-    <div class="doc-header">
-      <h1>Privacy Policy</h1>
-      <div class="meta">
-        <span>Effective: March 13, 2026</span>
-        <span>Last Updated: March 13, 2026</span>
-      </div>
+  <div class="doc-header">
+    <span class="badge">Legal</span>
+    <h1>Privacy Policy</h1>
+    <div class="meta">
+      <span>📅 Effective March 13, 2026</span>
+      <span>🔄 Last Updated March 13, 2026</span>
     </div>
-    <div class="doc-body">
+  </div>
 
-      <h2>1. Introduction</h2>
-      <p>LinkUp ("Company," "we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the LinkUp mobile application ("App").</p>
-      <p><strong>We reserve the right to modify this Privacy Policy at any time.</strong> When we make changes, we will update the "Last Updated" date above. Your continued use of the App after any modification constitutes your acceptance of the updated Privacy Policy. Please review this policy periodically.</p>
-      <p>If you do not agree with this Privacy Policy, please do not use the App.</p>
+  <h2>1. Introduction</h2>
+  <p>LinkUp ("Company," "we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the LinkUp mobile application ("App").</p>
+  <p><strong>We reserve the right to modify this Privacy Policy at any time.</strong> When we make changes, we will update the "Last Updated" date above. Your continued use of the App after any modification constitutes your acceptance of the updated Privacy Policy. Please review this policy periodically.</p>
+  <p>If you do not agree with this Privacy Policy, please do not use the App.</p>
 
-      <hr>
-      <h2>2. Information We Collect</h2>
+  <h2>2. Information We Collect</h2>
+  <h3>2.1 Information You Provide Directly</h3>
+  <ul>
+    <li><strong>Account Information</strong> — Name, username, email address, and/or phone number when you register</li>
+    <li><strong>Profile Information</strong> — Any updates you make to your profile (name, username, email)</li>
+    <li><strong>Group Content</strong> — Group names, descriptions, join codes you create or participate in</li>
+    <li><strong>Event Content</strong> — Event titles, dates, details, and locations you enter when creating or editing events</li>
+    <li><strong>Chat Messages</strong> — Messages, reactions, replies, event tags, and polls you send in group chats</li>
+    <li><strong>RSVP Responses</strong> — Your Going / Maybe / Not Going responses to events</li>
+    <li><strong>Device Token</strong> — Your Apple Push Notification Service (APNs) device token, used to deliver push notifications to your device</li>
+  </ul>
 
-      <h3>2.1 Information You Provide Directly</h3>
-      <ul>
-        <li><strong>Account Information</strong> — Name, username, email address, and/or phone number when you register</li>
-        <li><strong>Profile Information</strong> — Any updates you make to your profile (name, username, email)</li>
-        <li><strong>Group Content</strong> — Group names, descriptions, join codes you create or participate in</li>
-        <li><strong>Event Content</strong> — Event titles, dates, details, and locations you enter when creating or editing events</li>
-        <li><strong>Chat Messages</strong> — Messages, reactions, replies, event tags, and polls you send in group chats</li>
-        <li><strong>RSVP Responses</strong> — Your Going / Maybe / Not Going responses to events</li>
-        <li><strong>Device Token</strong> — Your Apple Push Notification Service (APNs) device token, used to deliver push notifications to your device</li>
-      </ul>
+  <h3>2.2 Information Collected Automatically</h3>
+  <ul>
+    <li><strong>Usage Data</strong> — How you interact with the App (features used, screens visited, actions taken)</li>
+    <li><strong>Device Information</strong> — Device model, iOS version, app version, device language</li>
+    <li><strong>Connection Data</strong> — IP address, connection timestamps, WebSocket connection metadata</li>
+    <li><strong>Crash and Error Data</strong> — Technical information about App errors and crashes to help us diagnose issues</li>
+  </ul>
 
-      <h3>2.2 Information Collected Automatically</h3>
-      <ul>
-        <li><strong>Usage Data</strong> — How you interact with the App (features used, screens visited, actions taken)</li>
-        <li><strong>Device Information</strong> — Device model, iOS version, app version, device language</li>
-        <li><strong>Connection Data</strong> — IP address, connection timestamps, WebSocket connection metadata</li>
-        <li><strong>Crash and Error Data</strong> — Technical information about App errors and crashes to help us diagnose issues</li>
-      </ul>
+  <h3>2.3 Information Collected Through Device Permissions</h3>
+  <p>We request the following device permissions, each used only for the stated purpose:</p>
+  <table>
+    <thead>
+      <tr><th>Permission</th><th>What We Access</th><th>How It's Used</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Camera</strong></td><td>Camera viewfinder only</td><td>Scan circular group join codes. No images are captured, stored, or transmitted.</td></tr>
+      <tr><td><strong>Location (When In Use)</strong></td><td>Approximate location</td><td>Center the map picker when you choose an event location. Not tracked in background, not shared with third parties.</td></tr>
+      <tr><td><strong>Calendar (Full Access)</strong></td><td>Your calendar events</td><td>Display your personal events alongside group events in the Calendar tab. Personal Calendar event times only may leave your device with your express permission. Other calendar data is never sent to our servers.</td></tr>
+      <tr><td><strong>Notifications</strong></td><td>Push notification delivery</td><td>Send you alerts about new events, RSVPs, join approvals, and reminders.</td></tr>
+    </tbody>
+  </table>
 
-      <h3>2.3 Information Collected Through Device Permissions</h3>
-      <p>We request the following device permissions, each used only for the stated purpose:</p>
-      <table>
-        <thead>
-          <tr><th>Permission</th><th>What We Access</th><th>How It's Used</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Camera</strong></td><td>Camera viewfinder only</td><td>Scan circular group join codes. No images are captured, stored, or transmitted.</td></tr>
-          <tr><td><strong>Location (When In Use)</strong></td><td>Approximate location</td><td>Center the map picker when you choose an event location. Not tracked in background, not shared with third parties.</td></tr>
-          <tr><td><strong>Calendar (Full Access)</strong></td><td>Your calendar events</td><td>Display your personal events alongside group events in the Calendar tab. Personal Calendar event times only may leave your device with your express permission. Other calendar data like location, name, etc. is never sent to our servers.</td></tr>
-          <tr><td><strong>Notifications</strong></td><td>Push notification delivery</td><td>Send you alerts about new events, RSVPs, join approvals, and reminders.</td></tr>
-        </tbody>
-      </table>
+  <h3>2.4 Information from Third-Party Advertising</h3>
+  <p>If you have not purchased the Remove Ads option, our advertising partner Google AdMob may collect:</p>
+  <ul>
+    <li>Advertising identifiers (IDFA, if you grant tracking permission via Apple's App Tracking Transparency prompt)</li>
+    <li>Approximate location (country/region level)</li>
+    <li>Device and app information used to serve relevant ads</li>
+  </ul>
+  <p>Google AdMob's privacy practices are governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
 
-      <h3>2.4 Information from Third-Party Advertising</h3>
-      <p>If you have not purchased the Remove Ads option, our advertising partner Google AdMob may collect:</p>
-      <ul>
-        <li>Advertising identifiers (IDFA, if you grant tracking permission via Apple's App Tracking Transparency prompt)</li>
-        <li>Approximate location (country/region level)</li>
-        <li>Device and app information used to serve relevant ads</li>
-      </ul>
-      <p>Google AdMob's privacy practices are governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+  <h2>3. How We Use Your Information</h2>
+  <ul>
+    <li><strong>Provide and operate the App</strong> — Create and manage your account, groups, events, and chats</li>
+    <li><strong>Deliver push notifications</strong> — Notify you about group activity, events, RSVPs, and reminders</li>
+    <li><strong>Personalize your experience</strong> — Apply your notification and in-app preferences</li>
+    <li><strong>Process purchases</strong> — Verify your in-app purchase of Remove Ads via Apple's StoreKit</li>
+    <li><strong>Improve the App</strong> — Analyze usage patterns and errors to fix bugs and improve features</li>
+    <li><strong>Enforce our Terms of Service</strong> — Detect and prevent abuse, fraud, and violations</li>
+    <li><strong>Comply with legal obligations</strong> — Respond to lawful requests from authorities where required</li>
+    <li><strong>Serve advertising</strong> — If you have not removed ads, display relevant advertisements via Google AdMob</li>
+  </ul>
+  <p>We do not sell your personal information to third parties.</p>
 
-      <hr>
-      <h2>3. How We Use Your Information</h2>
-      <ul>
-        <li><strong>Provide and operate the App</strong> — Create and manage your account, groups, events, and chats</li>
-        <li><strong>Deliver push notifications</strong> — Notify you about group activity, events, RSVPs, and reminders</li>
-        <li><strong>Personalize your experience</strong> — Apply your notification and in-app preferences</li>
-        <li><strong>Process purchases</strong> — Verify your in-app purchase of Remove Ads via Apple's StoreKit</li>
-        <li><strong>Improve the App</strong> — Analyze usage patterns and errors to fix bugs and improve features</li>
-        <li><strong>Enforce our Terms of Service</strong> — Detect and prevent abuse, fraud, and violations</li>
-        <li><strong>Comply with legal obligations</strong> — Respond to lawful requests from authorities where required</li>
-        <li><strong>Serve advertising</strong> — If you have not removed ads, display relevant advertisements via Google AdMob</li>
-      </ul>
-      <p>We do not sell your personal information to third parties.</p>
+  <h2>4. How We Store Your Information</h2>
+  <h3>4.1 Server Storage</h3>
+  <p>Your account data, group data, event data, and chat messages are stored on our servers hosted via Render. Event location data is stored in <strong>encrypted form</strong> using <code>pgp_sym_encrypt</code> (pgcrypto) and is decrypted only when delivered to authorized group members.</p>
 
-      <hr>
-      <h2>4. How We Store Your Information</h2>
+  <h3>4.2 On-Device Storage</h3>
+  <ul>
+    <li><strong>JWT authentication token</strong> — Stored securely in the iOS Keychain (encrypted by the OS). Expires after 7 days.</li>
+    <li><strong>Cached groups, events, and profile data</strong> — Stored in Core Data for offline browsing. Cleared when you log out.</li>
+    <li><strong>Notification preferences</strong> — Stored in iOS app storage (UserDefaults)</li>
+    <li><strong>Calendar events</strong> — Never stored by us; read locally from iOS Calendar only</li>
+  </ul>
 
-      <h3>4.1 Server Storage</h3>
-      <p>Your account data, group data, event data, and chat messages are stored on our servers hosted via Render. Event location data is stored in <strong>encrypted form</strong> using <code>pgp_sym_encrypt</code> (pgcrypto) and is decrypted only when delivered to authorized group members.</p>
+  <h3>4.3 Retention</h3>
+  <p>We retain your account data for as long as your account is active. If you delete your account:</p>
+  <ul>
+    <li>Your profile, groups you owned (if no other members remain), and personal data are deleted from our servers</li>
+    <li>Groups you owned with other members will have ownership transferred to the most senior member</li>
+    <li>Chat messages may be retained in a soft-deleted state for up to 30 days before permanent deletion</li>
+    <li>Backups may retain data for a limited period after deletion</li>
+  </ul>
 
-      <h3>4.2 On-Device Storage</h3>
-      <ul>
-        <li><strong>JWT authentication token</strong> — Stored securely in the iOS Keychain (encrypted by the OS). Expires after 7 days.</li>
-        <li><strong>Cached groups, events, and profile data</strong> — Stored in Core Data for offline browsing. Cleared when you log out.</li>
-        <li><strong>Notification preferences</strong> — Stored in iOS app storage (UserDefaults)</li>
-        <li><strong>Calendar events</strong> — Never stored by us; read locally from iOS Calendar only</li>
-      </ul>
+  <h2>5. How We Share Your Information</h2>
+  <p>We do not sell your personal information. We share information only in the following circumstances:</p>
 
-      <h3>4.3 Retention</h3>
-      <p>We retain your account data for as long as your account is active. If you delete your account:</p>
-      <ul>
-        <li>Your profile, groups you owned (if no other members remain), and personal data are deleted from our servers</li>
-        <li>Groups you owned with other members will have ownership transferred to the most senior member</li>
-        <li>Chat messages may be retained in a soft-deleted state for up to 30 days before permanent deletion</li>
-        <li>Backups may retain data for a limited period after deletion</li>
-      </ul>
+  <h3>5.1 With Other Users</h3>
+  <ul>
+    <li><strong>Profile</strong> — Your name and username are visible to members of groups you belong to</li>
+    <li><strong>Email / Phone</strong> — Visible to group members only if you have enabled this in Privacy Settings</li>
+    <li><strong>Events</strong> — Event details, including location and RSVP responses, are visible to all members of the group the event belongs to</li>
+    <li><strong>Chat messages</strong> — Visible to all members of the group chat</li>
+  </ul>
 
-      <hr>
-      <h2>5. How We Share Your Information</h2>
-      <p>We do not sell your personal information. We share information only in the following circumstances:</p>
+  <h3>5.2 With Service Providers</h3>
+  <ul>
+    <li><strong>Google AdMob</strong> — Advertising (only if ads are enabled)</li>
+    <li><strong>Apple APNs</strong> — Push notification delivery</li>
+    <li><strong>Render</strong> — Secure server infrastructure</li>
+  </ul>
 
-      <h3>5.1 With Other Users</h3>
-      <ul>
-        <li><strong>Profile</strong> — Your name and username are visible to members of groups you belong to</li>
-        <li><strong>Email / Phone</strong> — Visible to group members only if you have enabled this in Privacy Settings</li>
-        <li><strong>Events</strong> — Event details, including location and RSVP responses, are visible to all members of the group the event belongs to</li>
-        <li><strong>Chat messages</strong> — Visible to all members of the group chat</li>
-      </ul>
+  <h3>5.3 For Legal Reasons</h3>
+  <p>We may disclose your information if we believe in good faith that disclosure is necessary to comply with applicable law, protect the rights or safety of LinkUp, our users, or the public, or detect and prevent fraud or security issues.</p>
 
-      <h3>5.2 With Service Providers</h3>
-      <ul>
-        <li><strong>Google AdMob</strong> — Advertising (only if ads are enabled)</li>
-        <li><strong>Apple APNs</strong> — Push notification delivery</li>
-        <li><strong>Render</strong> — Secure server infrastructure</li>
-      </ul>
+  <h3>5.4 Business Transfers</h3>
+  <p>If LinkUp is involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction. We will notify you via email or a prominent in-app notice before your information becomes subject to a different privacy policy.</p>
 
-      <h3>5.3 For Legal Reasons</h3>
-      <p>We may disclose your information if we believe in good faith that disclosure is necessary to comply with applicable law, protect the rights or safety of LinkUp, our users, or the public, or detect and prevent fraud or security issues.</p>
+  <h2>6. Apple App Tracking Transparency (ATT)</h2>
+  <p>In accordance with Apple's App Tracking Transparency framework, we will ask for your permission before tracking your activity across other companies' apps and websites for advertising purposes. If you decline, you will still see ads, but they will not be personalized based on cross-app tracking. You can change your tracking preference at any time in <strong>iOS Settings → Privacy &amp; Security → Tracking</strong>.</p>
 
-      <h3>5.4 Business Transfers</h3>
-      <p>If LinkUp is involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction. We will notify you via email or a prominent in-app notice before your information becomes subject to a different privacy policy.</p>
+  <h2>7. Your Privacy Choices and Rights</h2>
+  <h3>7.1 Notification Preferences</h3>
+  <p>Manage push notification settings within the App under <strong>Profile → Notifications</strong>, or through <strong>iOS Settings → Notifications → LinkUp</strong>.</p>
 
-      <hr>
-      <h2>6. Apple App Tracking Transparency (ATT)</h2>
-      <p>In accordance with Apple's App Tracking Transparency framework, we will ask for your permission before tracking your activity across other companies' apps and websites for advertising purposes. If you decline, you will still see ads, but they will not be personalized based on cross-app tracking. You can change your tracking preference at any time in <strong>iOS Settings → Privacy &amp; Security → Tracking</strong>.</p>
+  <h3>7.2 Per-Group Notification Preferences</h3>
+  <p>Mute event or chat notifications for individual groups through <strong>Group Settings → Notifications</strong>. Muted preferences are stored on our server and prevent push notifications from being sent for that group.</p>
 
-      <hr>
-      <h2>7. Your Privacy Choices and Rights</h2>
+  <h3>7.3 Ad Tracking</h3>
+  <p>You can opt out of personalized advertising by selecting "Ask App Not to Track" at the ATT prompt, disabling tracking in <strong>iOS Settings → Privacy &amp; Security → Tracking</strong>, or purchasing the <strong>Remove Ads</strong> in-app purchase.</p>
 
-      <h3>7.1 Notification Preferences</h3>
-      <p>Manage push notification settings within the App under <strong>Profile → Notifications</strong>, or through <strong>iOS Settings → Notifications → LinkUp</strong>.</p>
+  <h3>7.4 Calendar Access</h3>
+  <p>Revoke calendar access at any time in <strong>iOS Settings → Privacy &amp; Security → Calendars → LinkUp</strong>. All other App features remain functional.</p>
 
-      <h3>7.2 Per-Group Notification Preferences</h3>
-      <p>Mute event or chat notifications for individual groups through <strong>Group Settings → Notifications</strong>.</p>
+  <h3>7.5 Location Access</h3>
+  <p>Revoke location access at any time in <strong>iOS Settings → Privacy &amp; Security → Location Services → LinkUp</strong>. Location is only used when you are actively picking an event location.</p>
 
-      <h3>7.3 Ad Tracking</h3>
-      <p>You can opt out of personalized advertising by selecting "Ask App Not to Track" at the ATT prompt, disabling tracking in <strong>iOS Settings → Privacy &amp; Security → Tracking</strong>, or purchasing the <strong>Remove Ads</strong> in-app purchase.</p>
+  <h3>7.6 Account Deletion</h3>
+  <p>Delete your account at any time from <strong>Profile → Help &amp; Support → Delete Account</strong>. Deletion is permanent and cannot be undone.</p>
 
-      <h3>7.4 Calendar Access</h3>
-      <p>Revoke calendar access at any time in <strong>iOS Settings → Privacy &amp; Security → Calendars → LinkUp</strong>. All other App features remain functional.</p>
+  <h3>7.7 Rights for EEA / UK Users (GDPR)</h3>
+  <p>If you are located in the European Economic Area or United Kingdom, you have the following rights under GDPR: right of access, right to rectification, right to erasure, right to restriction, right to data portability, right to object, and right to withdraw consent.</p>
+  <p>To exercise any of these rights, contact us at <a href="mailto:support@linkupapp.com">support@linkupapp.com</a>. We will respond within 30 days.</p>
+  <p>Our legal bases for processing: <strong>Contract</strong> (providing the App's services), <strong>Legitimate Interests</strong> (security, fraud prevention, service improvement), and <strong>Consent</strong> (push notifications, ad tracking where applicable).</p>
 
-      <h3>7.5 Location Access</h3>
-      <p>Revoke location access at any time in <strong>iOS Settings → Privacy &amp; Security → Location Services → LinkUp</strong>. Location is only used when you are actively picking an event location.</p>
+  <h3>7.8 Rights for California Users (CCPA / CPRA)</h3>
+  <p>California residents have the right to know, delete, correct, and opt out of the sale or sharing of personal information. We do not sell personal information. We will not discriminate against you for exercising your privacy rights. Contact us at <a href="mailto:support@linkupapp.com">support@linkupapp.com</a>.</p>
 
-      <h3>7.6 Account Deletion</h3>
-      <p>Delete your account at any time from <strong>Profile → Help &amp; Support → Delete Account</strong>. Deletion is permanent and cannot be undone.</p>
+  <h2>8. Children's Privacy</h2>
+  <p>The App is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have collected such information, contact us immediately at <a href="mailto:support@linkupapp.com">support@linkupapp.com</a>.</p>
 
-      <h3>7.7 Rights for EEA / UK Users (GDPR)</h3>
-      <p>If you are located in the European Economic Area or United Kingdom, you have the right of access, rectification, erasure, restriction, data portability, objection, and to withdraw consent. Contact us at <a href="mailto:support@linkupapp.com">support@linkupapp.com</a> — we will respond within 30 days.</p>
-      <p>Our legal bases for processing: <strong>Contract</strong> (providing the App), <strong>Legitimate Interests</strong> (security, fraud prevention), and <strong>Consent</strong> (notifications, ad tracking).</p>
+  <h2>9. Security</h2>
+  <p>We implement reasonable technical and organizational measures to protect your information, including:</p>
+  <ul>
+    <li><strong>Keychain storage</strong> for authentication tokens on-device</li>
+    <li><strong>Encrypted storage</strong> for event location data on our servers (pgcrypto)</li>
+    <li><strong>HTTPS/TLS</strong> for all data in transit</li>
+    <li><strong>JWT authentication</strong> with 7-day expiry for API access</li>
+    <li><strong>Rate limiting</strong> on all API endpoints to prevent abuse</li>
+    <li><strong>Bcrypt password hashing</strong> (14 rounds)</li>
+  </ul>
+  <p>No method of transmission over the internet or electronic storage is 100% secure.</p>
 
-      <h3>7.8 Rights for California Users (CCPA / CPRA)</h3>
-      <p>California residents have the right to know, delete, correct, and opt out of the sale or sharing of personal information (we do not sell personal information). We will not discriminate against you for exercising your rights. Contact us at <a href="mailto:support@linkupapp.com">support@linkupapp.com</a>.</p>
+  <h2>10. Third-Party Links and Services</h2>
+  <p>The App may contain links to third-party websites or services (e.g., Waze for directions). We are not responsible for the privacy practices of those third parties.</p>
 
-      <hr>
-      <h2>8. Children's Privacy</h2>
-      <p>The App is not directed to children under 13. We do not knowingly collect personal information from children under 13. If you believe we have collected such information, contact us at <a href="mailto:support@linkupapp.com">support@linkupapp.com</a>.</p>
+  <h2>11. International Data Transfers</h2>
+  <p>Your information may be stored and processed in the United States or any country where our service providers operate. By using the App, you consent to such transfers. For EEA/UK users, we ensure appropriate safeguards are in place in accordance with applicable data protection law.</p>
 
-      <hr>
-      <h2>9. Security</h2>
-      <p>We implement reasonable technical and organizational measures to protect your information, including Keychain storage for tokens, <code>pgcrypto</code> encrypted location data, HTTPS/TLS for all data in transit, JWT authentication with 7-day expiry, rate limiting on all API endpoints, and bcrypt password hashing (14 rounds). No method of transmission is 100% secure.</p>
+  <h2>12. Changes to This Privacy Policy</h2>
+  <p>We reserve the right to update this Privacy Policy at any time without prior notice. When we make material changes, we will update the "Last Updated" date at the top. Your continued use of the App after changes constitutes acceptance.</p>
 
-      <hr>
-      <h2>10. Third-Party Links and Services</h2>
-      <p>The App may contain links to third-party websites or services (e.g., Waze for directions). We are not responsible for the privacy practices of those third parties.</p>
+  <h2>13. Contact Us</h2>
+  <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+  <p><strong>LinkUp Support</strong><br>
+  Email: <a href="mailto:support@linkupapp.com">support@linkupapp.com</a></p>
+  <p>For GDPR-related inquiries, you may also lodge a complaint with your local data protection authority.</p>
 
-      <hr>
-      <h2>11. International Data Transfers</h2>
-      <p>Your information may be stored and processed in the United States or any country where our service providers operate. By using the App, you consent to such transfers. For EEA/UK users, we ensure appropriate safeguards are in place.</p>
-
-      <hr>
-      <h2>12. Changes to This Privacy Policy</h2>
-      <p>We reserve the right to update this Privacy Policy at any time. When we make material changes, we will update the "Last Updated" date at the top. Your continued use of the App after changes constitutes acceptance.</p>
-
-      <hr>
-      <h2>13. Contact Us</h2>
-      <p><strong>LinkUp Support</strong><br>
-      Email: <a href="mailto:support@linkupapp.com">support@linkupapp.com</a></p>
-      <p>For GDPR-related inquiries, you may also lodge a complaint with your local data protection authority.</p>
-
-    </div>
+  <div class="doc-footer">
+    <img src="logo.png" alt="LinkUp" />
+    <p>Last updated March 13, 2026</p>
   </div>
 </div>
 

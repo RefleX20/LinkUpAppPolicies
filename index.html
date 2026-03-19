@@ -3,114 +3,468 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LinkUp</title>
+  <title>LinkUp — Plan Together</title>
   <link rel="icon" type="image/png" href="icon.png" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --gray: #888;
+      --light: #f5f5f5;
+      --border: rgba(255,255,255,0.1);
+    }
+
+    html { scroll-behavior: smooth; }
+
     body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      background: rgba(10,10,10,0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { height: 26px; width: auto; filter: invert(1); }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #fff; }
+
+    /* ── HERO ── */
+    .hero {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: #fff;
-      background-image: url('bg.png');
-      background-size: 320px;
-      background-repeat: repeat;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 24px;
-      padding: 56px 48px 48px;
-      max-width: 440px;
-      width: calc(100% - 48px);
       text-align: center;
-      box-shadow: 0 8px 48px rgba(0,0,0,0.13), 0 1px 3px rgba(0,0,0,0.08);
+      padding: 140px 24px 100px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .logo {
-      width: 220px;
-      height: auto;
-      margin-bottom: 12px;
+    /* subtle pattern overlay in hero */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('bg.png');
+      background-size: 200px;
+      background-repeat: repeat;
+      opacity: 0.04;
+      pointer-events: none;
     }
 
-    .tagline {
-      color: #666;
-      font-size: 0.95rem;
-      margin-bottom: 40px;
-      letter-spacing: 0.01em;
+    /* glow */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(255,255,255,0.06) 0%, transparent 70%);
+      pointer-events: none;
     }
 
-    .links {
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 28px;
+    }
+
+    .hero-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 24px;
+      object-fit: contain;
+      background: #fff;
+      padding: 14px;
+      margin-bottom: 32px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+    .hero h1 span { color: rgba(255,255,255,0.35); }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: rgba(255,255,255,0.55);
+      max-width: 520px;
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+
+    .hero-ctas {
       display: flex;
-      flex-direction: column;
       gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
-    a.btn {
-      display: flex;
+    .btn-app {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 10px;
-      padding: 15px 24px;
-      border-radius: 14px;
+      background: #fff;
+      color: #000;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 24px rgba(255,255,255,0.1);
+    }
+    .btn-app:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255,255,255,0.15); }
+    .btn-app svg { width: 20px; height: 20px; }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: rgba(255,255,255,0.7);
+      padding: 14px 28px;
+      border-radius: 50px;
       font-weight: 600;
       font-size: 0.95rem;
       text-decoration: none;
-      transition: transform 0.12s, box-shadow 0.12s;
-      letter-spacing: 0.01em;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: border-color 0.2s, color 0.2s;
     }
-    a.btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-    }
-    a.btn:active { transform: translateY(0); }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.4); color: #fff; }
 
-    a.btn.primary {
-      background: #111;
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.3);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ── FEATURES ── */
+    .section {
+      padding: 120px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.5);
+      max-width: 480px;
+      margin-bottom: 64px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-card {
+      background: #141414;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px;
+      padding: 32px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .feature-card:hover {
+      border-color: rgba(255,255,255,0.15);
+      transform: translateY(-3px);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+    .feature-card p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.65;
+    }
+
+    /* ── DIVIDER ── */
+    .divider-line {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ── PRIVACY SECTION ── */
+    .legal-section {
+      padding: 100px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .legal-intro { padding-right: 48px; }
+    .legal-intro .section-label { margin-bottom: 16px; }
+    .legal-intro .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 16px; }
+    .legal-intro p { color: rgba(255,255,255,0.45); font-size: 0.95rem; line-height: 1.7; }
+
+    .legal-cards { display: flex; flex-direction: column; gap: 14px; }
+
+    .legal-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #141414;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 24px 28px;
+      text-decoration: none;
       color: #fff;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
     }
-    a.btn.secondary {
-      background: #f2f2f2;
-      color: #111;
-      border: 1.5px solid #e0e0e0;
+    .legal-card:hover {
+      background: #1c1c1c;
+      border-color: rgba(255,255,255,0.15);
+      transform: translateX(4px);
     }
 
-    .btn-icon {
-      width: 18px;
-      height: 18px;
-      opacity: 0.85;
-      flex-shrink: 0;
+    .legal-card-left { display: flex; align-items: center; gap: 16px; }
+    .legal-card-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.06);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
     }
-    .btn.primary .btn-icon { filter: invert(1); }
+    .legal-card-text h3 { font-size: 1rem; font-weight: 700; margin-bottom: 3px; }
+    .legal-card-text p { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+    .legal-card-arrow { color: rgba(255,255,255,0.3); font-size: 1.2rem; }
 
-    .divider {
-      width: 40px;
-      height: 2px;
-      background: #eee;
-      border-radius: 2px;
-      margin: 32px auto 0;
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 48px 24px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    footer img { height: 22px; filter: invert(1); opacity: 0.5; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a {
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    .footer-copy { color: rgba(255,255,255,0.25); font-size: 0.82rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .legal-section { grid-template-columns: 1fr; }
+      .legal-intro { padding-right: 0; margin-bottom: 32px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <img class="logo" src="logo.png" alt="LinkUp" />
-    <p class="tagline">Legal &amp; Privacy</p>
-    <div class="links">
-      <a class="btn primary" href="privacy.html">
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 5v6c0 5.25 3.41 10.16 8 11.36C16.59 21.16 20 16.25 20 11V5l-8-3z"/></svg>
-        Privacy Policy
-      </a>
-      <a class="btn secondary" href="tos.html">
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg>
-        Terms of Service
-      </a>
-    </div>
-    <div class="divider"></div>
+
+<!-- NAV -->
+<nav>
+  <img class="nav-logo" src="logo.png" alt="LinkUp" />
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#legal">Legal</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="tos.html">Terms</a>
   </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Now available on iOS</p>
+  <img class="hero-icon" src="icon.png" alt="LinkUp icon" />
+  <h1>Plan together.<br><span>Stay connected.</span></h1>
+  <p class="hero-sub">LinkUp brings your group's events, chats, and RSVPs into one place — so nothing gets missed and everyone stays in the loop.</p>
+  <div class="hero-ctas">
+    <a class="btn-app" href="#">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Download on App Store
+    </a>
+    <a class="btn-ghost" href="#features">Learn more</a>
+  </div>
+  <div class="hero-scroll">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+    Scroll
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <p class="section-label">What LinkUp does</p>
+  <h2 class="section-title">Everything your<br>group needs</h2>
+  <p class="section-sub">One app for events, chats, RSVPs, and more. No group chat chaos. No missed plans.</p>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">📅</div>
+      <h3>Group Events</h3>
+      <p>Create events with dates, locations, and details. RSVP with Going, Maybe, or Not Going. Set capacity limits and cutoff deadlines.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💬</div>
+      <h3>Group Chat</h3>
+      <p>Real-time messaging with reactions, replies, polls, and event tags — all in one thread for each group.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🗓️</div>
+      <h3>Unified Calendar</h3>
+      <p>See your personal calendar events alongside group events in one view so you never double-book.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔗</div>
+      <h3>Easy Group Joining</h3>
+      <p>Join groups instantly by scanning a circular QR code or entering a 6-character code. Private groups require admin approval.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔔</div>
+      <h3>Smart Notifications</h3>
+      <p>Get notified about new events, RSVPs, reminders, and group activity. Customize or mute per group.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🛡️</div>
+      <h3>Privacy First</h3>
+      <p>Event locations are encrypted end-to-end. Your tokens live in the iOS Keychain. Your data is never sold.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider-line" />
+
+<!-- LEGAL -->
+<div class="legal-section" id="legal">
+  <div class="legal-intro">
+    <p class="section-label">Legal</p>
+    <h2 class="section-title">Transparent by design</h2>
+    <p>We believe you should know exactly how your data is handled. Our policies are written in plain language — no legal jargon, no surprises.</p>
+  </div>
+  <div class="legal-cards">
+    <a class="legal-card" href="privacy.html">
+      <div class="legal-card-left">
+        <div class="legal-card-icon">🔒</div>
+        <div class="legal-card-text">
+          <h3>Privacy Policy</h3>
+          <p>What we collect, how we use it, and your rights</p>
+        </div>
+      </div>
+      <span class="legal-card-arrow">→</span>
+    </a>
+    <a class="legal-card" href="tos.html">
+      <div class="legal-card-left">
+        <div class="legal-card-icon">📄</div>
+        <div class="legal-card-text">
+          <h3>Terms of Service</h3>
+          <p>Rules, responsibilities, and your agreement with us</p>
+        </div>
+      </div>
+      <span class="legal-card-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <img src="logo.png" alt="LinkUp" />
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="tos.html">Terms of Service</a>
+      <a href="mailto:support@linkupapp.com">Contact</a>
+    </div>
+    <p class="footer-copy">© 2026 LinkUp. All rights reserved.</p>
+  </div>
+</footer>
+
 </body>
 </html>
